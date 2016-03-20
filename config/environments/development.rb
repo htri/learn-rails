@@ -1,4 +1,5 @@
 Rails.application.configure do
+	require('yaml')
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -30,8 +31,8 @@ Rails.application.configure do
 	config.action_mailer.smtp_settings = {
 		address: "smtp.sendgrid.net",
 		port: 587,
-		domain: Rails.application.secret.domain_name,
-		authentication: "plain"
+		domain: Rails.application.secrets.domain_name,
+		authentication: "plain",
 		user_name: Rails.application.secrets.email_provider_username,
 		password: Rails.application.secrets.email_provider_password
 	}
